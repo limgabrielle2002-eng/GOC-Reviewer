@@ -1,14 +1,24 @@
 {
-  "name": "CRP Maritime Radio Reviewer",
+  "name": "CRP Maritime Reviewer",
   "short_name": "CRP Reviewer",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b2239",
-  "theme_color": "#0b2239",
-  "description": "Offline CRP1 and CRP2 maritime radio reviewer.",
+  "background_color": "#07101e",
+  "theme_color": "#0b1220",
+  "description": "Offline CRP1 and CRP2 maritime practice reviewer.",
   "icons": [
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }
