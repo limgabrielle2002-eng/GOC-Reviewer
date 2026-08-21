@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRP Maritime Radio Reviewer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b2239">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><div class="brand"><span class="brand-mark">⚓</span><div><h1>CRP Maritime Radio Reviewer</h1><p>GMDSS • Radio Communications • Exam Practice</p></div></div><button class="icon-btn" id="homeBtn" title="Home">⌂</button></header>
+<main>
+<section id="home" class="screen active">
+  <div class="hero"><div class="hero-copy"><span class="eyebrow">STUDY • PRACTICE • TRACK</span><h2>Prepare smarter for your CRP tests.</h2><p>Randomized questions, shuffled A–D answers, progress tracking, and a clean mobile-friendly interface.</p></div><div class="hero-badge">GMDSS<br><strong>CRP</strong></div></div>
+  <div class="cards">
+    <article class="test-card crp1"><div class="card-icon">📡</div><div><h3>CRP1</h3><p>Large GMDSS / maritime radio question bank.</p><button class="primary" data-start="CRP1">Start CRP1</button></div></article>
+    <article class="test-card crp2"><div class="card-icon">🔥</div><div><h3>CRP2</h3><p>Fire-onboard, GMDSS operations and radio practice.</p><button class="primary" data-start="CRP2">Start CRP2</button></div></article>
+    <article class="history-card"><div class="card-icon">📊</div><div><h3>History</h3><p>Review previous attempts, scores and dates.</p><button class="secondary" id="historyBtn">Open History</button></div></article>
+  </div>
+  <div class="notice"><strong>Source note:</strong> Questions and choices are taken from the uploaded CRP1 and CRP2 PDFs. CRP2 contains marked answers in the source. CRP1 does not contain an encoded answer key, so CRP1 results use self-marking after each question.</div>
+</section>
+<section id="setup" class="screen">
+  <div class="panel narrow"><button class="back" id="setupBack">← Home</button><span class="eyebrow" id="setupEyebrow">TEST SETUP</span><h2 id="setupTitle">CRP1</h2><p id="setupDescription"></p>
+    <div class="field"><label>Number of questions</label><div class="segmented" id="lengthOptions"><button data-length="25">25</button><button data-length="50" class="selected">50</button><button data-length="100">100</button><button data-length="all">All</button></div></div>
+    <div class="field"><label>Mode</label><div class="mode-grid"><button class="mode selected" data-mode="test"><strong>Test</strong><span>One question at a time</span></button><button class="mode" data-mode="study"><strong>Study</strong><span>Show feedback as you go</span></button></div></div>
+    <button class="primary full" id="beginBtn">Begin Test →</button>
+  </div>
+</section>
+<section id="quiz" class="screen">
+  <div class="quiz-head"><button class="back" id="quitBtn">✕ Quit</button><div class="quiz-title"><span id="quizName">CRP1</span><span id="quizCounter">Question 1 of 50</span></div><div class="score-pill" id="scorePill">0 correct</div></div>
+  <div class="progress"><div id="progressBar"></div></div>
+  <div class="question-panel"><div class="q-meta"><span id="sourceNum">Source #1</span><span id="modeLabel">TEST</span></div><h2 id="questionText"></h2><div id="choices" class="choices"></div><div id="feedback" class="feedback"></div><div class="quiz-actions"><button class="secondary" id="skipBtn">Skip</button><button class="primary" id="nextBtn" disabled>Next →</button></div></div>
+</section>
+<section id="result" class="screen"><div class="panel result-panel"><div class="result-icon">🏁</div><span class="eyebrow">TEST COMPLETE</span><h2 id="resultTitle"></h2><div class="result-score" id="resultScore"></div><p id="resultDetails"></p><div class="result-actions"><button class="primary" id="retryBtn">Try Again</button><button class="secondary" id="resultHomeBtn">Home</button></div></div></section>
+<section id="history" class="screen"><div class="panel"><div class="history-head"><div><button class="back" id="historyBack">← Home</button><span class="eyebrow">YOUR PROGRESS</span><h2>History</h2></div><button class="danger" id="clearHistory">Clear</button></div><div id="historyList"></div></div></section>
+</main>
+<footer>Built from the uploaded CRP1.pdf and CRP2.pdf • Your history stays in this browser.</footer>
+</div>
+<script src="crp1-data.js"></script>
+<script src="crp2-data.js"></script>
+<script src="script.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js').catch(console.error));
+    }
+  </script>
+</body></html>
