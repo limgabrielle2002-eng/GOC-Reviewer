@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07101e">
+<meta name="description" content="Prepare for GOC Theoretical Exam — Competence 1 and Competence 2">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<title>GOC Theoretical Exam Reviewer</title>
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+  <div><div class="brand">⚓ GOC Theoretical Exam</div><div class="subtitle">Competence 1 • Competence 2 • Practice & History</div></div>
+  <button id="homeTopBtn" class="icon-btn" type="button">⌂</button>
+</header>
+<main>
+<section id="homeScreen" class="screen active">
+  <div class="hero"><div class="hero-icon">⚓</div><h1>Prepare for GOC Theoretical Exam</h1><p>Study by competence and part, with randomized questions and A–D choices.</p></div>
+  <div class="card-grid">
+    <button class="exam-card" data-exam="C1" type="button"><span class="exam-badge">COMPETENCE 1</span><strong>Competence 1</strong><small>1,022 questions • 9 parts • Answer key included</small><span class="arrow">Select Part →</span></button>
+    <button class="exam-card" data-exam="C2" type="button"><span class="exam-badge">COMPETENCE 2</span><strong>Competence 2</strong><small>150 questions • 2 parts • Answer key included</small><span class="arrow">Select Part →</span></button>
+  </div>
+  <div class="home-actions"><button id="historyBtn" class="secondary-btn" type="button">📊 History</button><button id="installBtn" class="secondary-btn hidden" type="button">📲 Install App</button></div>
+  <div class="info-card"><strong>Source note</strong><p>Question banks are based on the supplied Competence 1 and Competence 2 source question banks. The underlined choice in the source is treated as the correct answer.</p><ul><li>Competence 1: 9 parts.</li><li>Competence 2: 2 parts.</li><li>Questions and A/B/C/D choices are randomized.</li><li>Scores and history are saved on this device.</li><li>Offline support is included.</li></ul></div>
+</section>
+
+<section id="partsScreen" class="screen">
+  <button id="partsBackBtn" class="back-btn" type="button">← Back</button>
+  <div class="section-heading"><span id="partsBadge" class="exam-badge">COMPETENCE</span><h2 id="partsTitle">Select Part</h2><p id="partsSubtitle"></p></div>
+  <div id="partGrid" class="part-grid"></div>
+</section>
+
+<section id="setupScreen" class="screen">
+  <button id="setupBackBtn" class="back-btn" type="button">← Parts</button>
+  <div class="section-heading"><span id="setupBadge" class="exam-badge"></span><h2 id="setupTitle"></h2><p id="setupSubtitle"></p></div>
+  <div class="setup-card">
+    <label for="countSelect">Number of questions</label>
+    <select id="countSelect"><option value="25">25 questions</option><option value="50" selected>50 questions</option><option value="100">100 questions</option><option value="all">All questions in this part</option></select>
+    <label for="modeSelect">Mode</label>
+    <select id="modeSelect"><option value="test" selected>Test — score at the end</option><option value="practice">Practice — see feedback immediately</option></select>
+    <button id="beginBtn" class="primary-btn" type="button">Begin Part</button>
+  </div>
+</section>
+
+<section id="quizScreen" class="screen">
+  <div class="quiz-header"><button id="quitBtn" class="back-btn" type="button">✕ Quit</button><div class="progress-wrap"><div class="progress-label"><span id="progressText"></span><span id="scoreLive"></span></div><div class="progress"><div id="progressBar"></div></div></div></div>
+  <article class="question-card"><div class="question-meta"><span id="examLabel"></span><span id="partLabel"></span><span id="sourceNumber"></span></div><h2 id="questionText"></h2><div id="choices" class="choices"></div><div id="feedback" class="feedback hidden"></div></article>
+  <div class="quiz-footer"><button id="nextBtn" class="primary-btn" type="button" disabled>Next Question →</button></div>
+</section>
+
+<section id="resultScreen" class="screen">
+  <div class="result-card"><div id="resultIcon" class="result-icon">🏆</div><h2 id="resultTitle">Part Complete</h2><div id="resultScore" class="result-score">0%</div><p id="resultDetails"></p><div class="result-actions"><button id="retryBtn" class="primary-btn" type="button">Try Part Again</button><button id="resultPartsBtn" class="secondary-btn" type="button">Choose Another Part</button><button id="resultHomeBtn" class="secondary-btn" type="button">Home</button></div></div>
+</section>
+
+<section id="historyScreen" class="screen">
+  <div class="section-heading"><button id="historyBackBtn" class="back-btn" type="button">← Back</button><h2>Test History</h2><p>Your recent results are stored on this device.</p></div>
+  <div id="historyList" class="history-list"></div><button id="clearHistoryBtn" class="danger-btn" type="button">Clear History</button>
+</section>
+</main>
+</div>
+<script src="crp1-data.js"></script><script src="crp2-data.js"></script><script src="script.js"></script>
+</body></html>
